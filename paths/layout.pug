@@ -1,0 +1,44 @@
+html
+  head
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet")
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(charset="UTF-8")
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    link(rel='stylesheet', type='text/css', href='styleMain.css')
+  body
+    //- Stuff is black, with panels of apps to run
+    //- Possible a side or top navigation bar, but avoid for now
+    //- .appContainer
+    //-   .app
+    //-     .appImg
+    //-       img(src="http://www.androidguys.com/wp-content/uploads/2015/11/smoke_color_paint_abstract_high_contrast_hd-wallpaper-159738.jpg")
+    //-     .appDesc
+    //-       .appTitle
+    //-         |OurTube
+    //-       |Watch Videos on this node server Youtube alternative!
+    
+    #navBar 
+      ul
+        li
+          a(href="javascript:loadPage('/')") Home
+        li
+          a(href="javascript:loadPage('/explore')") Explore
+        li
+          a(href="javascript:loadPage('/search')") Search
+        li
+          a(href="javascript:loadPage('/myList')") My List
+        li
+          a(href="javascript:loadPage('/protected')") Protected
+        li
+          a(href="javascript:loadPage('/login')") Login
+        li
+          a(href="javascript:logout()") Logout
+        
+
+    #loadPage Content of this will be subject to change
+    .toastBox
+    script(src="/layout.js")
+    script
+      |loadPage("#{path}")
