@@ -5,7 +5,7 @@ html, body{
     color:black;
 }
 *{
-    transition: 0.20s;
+    /*transition: 0.20s;*/
     font-family: 'Lato', sans-serif;
 }
 
@@ -52,6 +52,7 @@ h2{
 #navBar ul li {
     float: none;
     display:inline-block;
+    
 }
 #navBar ul li a {
     display: block;
@@ -59,6 +60,7 @@ h2{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: 0.20s;
 }
 #navBar ul li a:hover {
     color: white;
@@ -118,9 +120,6 @@ h2{
 .content img{
     width:100%;
 }
-.content img:active{
-    transform:scale(2);
-}
 .content .text{
     padding:1rem;
 }
@@ -145,6 +144,7 @@ h2{
     display: inline-block;
     margin:0.4rem;
     padding:0.2rem;
+    transition: 0.2s;
     /*background:rgba(0,255,0,0.2);*/
 }
 .tag:hover{

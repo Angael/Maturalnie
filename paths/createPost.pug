@@ -1,3 +1,4 @@
+
 .midWrapper
   .post
     .header
@@ -12,9 +13,15 @@
     .content
       .img
         img(src="http://via.placeholder.com/1250x650")
-      .text(contenteditable="true")
+      .text#scriptMe
         |Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec 
       .link
       .video
+  button(onclick="javascript:$('#scriptMe').trumbowyg();") Edytuj Tekst
+  button(onclick="javascript:$('#scriptMe').trumbowyg('destroy');") Zakończ Edycje
 script
   |//alert("loaded this up")
+<script src="trumbowyg.min.js"></script>
+script
+  |$.trumbowyg.svgPath = '/icons.svg';
+  |$('.text').trumbowyg();
