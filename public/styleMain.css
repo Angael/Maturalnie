@@ -1,12 +1,13 @@
 html, body{
     margin:0;
-    overflow:auto;
+    
     background:rgb(244, 244, 244);
     color:black;
 }
 *{
     /*transition: 0.20s;*/
     font-family: 'Lato', sans-serif;
+    box-sizing:border-box;
 }
 
 #navBar{
@@ -14,7 +15,7 @@ html, body{
     top:0;
     left:0;
     background:black;
-    width:100vw;
+    width:100%;
     height:47px;
     z-index: 9999;
 }
@@ -26,13 +27,58 @@ html, body{
     /*Pionowy pasek jak w facebooku, moze zrob jakims gridem 
     ale nie wiem tbh*/
 }
-#loadPage .midWrapper{
+#loadPage .midWrapper, #loadPage .midWrapperSlim{ /*name midWrapper is depricated*/
     background:#FFFFFF;
     margin:0 auto 1rem auto;
     width:50rem;
     border:solid 1px #e0e0e0;
     border-radius:3px;
     padding: 0.8rem 0.8rem;
+}
+#loadPage .midWrapperWide{
+    /*display:grid;
+    grid-template-columns: 2fr  5fr; 
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "menu mainContainer";*/
+
+    background:#FFFFFF;
+    margin:0 auto 1rem auto;
+    width:75rem;
+    border:solid 1px #e0e0e0;
+    border-radius:3px;
+    padding: 0.8rem 0.8rem;
+    
+}
+.midWrapperWide .menuContainer{
+    
+    /*grid-area: menu;*/
+    position:sticky;
+    top:4rem;
+    display:inline-block;
+    width:33.3%;
+    height:80vh;
+    overflow:auto;
+    padding:0 0.8rem;
+}
+.menuInside{
+    background: rgb(244, 244, 244);
+    padding:0.8rem 0.5rem;
+    margin-bottom:0.8rem;
+}
+/*.menuSticky{
+    width:25rem;
+    height: auto;
+    background:blue;
+    position:fixed;
+}*/
+.midWrapperWide .mainContainer{
+    background:red;
+    /*grid-area: mainContainer*/
+    display:inline-block;
+    width:calc(66.6% - 0.5rem);
+    margin-right:0.5rem;
+    vertical-align: top;
 }
 h2{
     -webkit-margin-before: 0;
@@ -145,6 +191,7 @@ h2{
     margin:0.4rem;
     padding:0.2rem;
     transition: 0.2s;
+    cursor:pointer;
     /*background:rgba(0,255,0,0.2);*/
 }
 .tag:hover{
@@ -160,4 +207,31 @@ input, button, submit {
     outline:none;
     background:0;
     font-size: 16px;
+}
+
+/*TagIt HotFix*/
+/*.tagit-choice{
+    display: inline-block;
+    margin: 0.4rem;
+    padding: 0.2rem;
+    transition: 0.2s;
+}
+.tagit-choice:hover{
+    background:rgba(100,100,100,0.2);
+}
+.tagit-new{
+    display:inline-block;
+}*/
+
+/*ScrollBar*/
+::-webkit-scrollbar {
+  background: #cbcbcb;
+  border-radius: 0px;
+  height: 8px;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #7d7d7d;
+  border-radius: 0px;
+
 }

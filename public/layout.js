@@ -17,6 +17,7 @@ function loadPage(url){
     success: (msg)=>{
         console.log( "Load page Done");
         $("#loadPage").html(msg);
+        window.history.pushState(null, null, url);
     }});
 }
 

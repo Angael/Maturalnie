@@ -1,27 +1,50 @@
+.midWrapperWide
+  .mainContainer
+    .post
+      .header
+        .title(contenteditable="true") Kinematyka - ruch jednostajny
+        .author Krzysztof Widacki
+      .tags
+        .tag.matematyka matematyka
+        .tag.polski polski
+        .tag.angielski angielski
+        .tag.fizyka fizyka
+        .tag.chemia chemia
+      .content
+        .img
+          img(src="http://via.placeholder.com/1250x650")
+        .text#scriptMe
+          |Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec 
+        .link
+        .video
+    
+  .menuContainer
+    .menuInside
+      h3 Opcje:
+      button(onclick="javascript:$('#scriptMe').trumbowyg();") Edytuj Tekst
+      button(onclick="javascript:$('#scriptMe').trumbowyg('destroy');") Zakończ Edycje
+      
+      h5 Add Tag:
+      input(type="text" placeholder="Polski" id="tagNameAdd")
+      button(onclick="addTag()") Add
+      br
+      h5 Remove Tag:
+      input(type="text" placeholder="Matematyka" id="tagNameRemove")
+      button(onclick="removeTag()") Remove
+      br
+      |Alternatywnie możesz kliknąć niechciany tag by go usunąć
+    .menuInside
+      h3 Obrazek:
+      |Image
+      input(type="text" placeholder="Alternative Link" id="imgLink")
 
-.midWrapper
-  .post
-    .header
-      .title(contenteditable="true") Kinematyka - ruch jednostajny
-      .author Krzysztof Widacki
-    .tags(contenteditable="true")
-      .tag.matematyka matematyka
-      .tag.polski polski
-      .tag.angielski angielski
-      .tag.fizyka fizyka
-      .tag.chemia chemia
-    .content
-      .img
-        img(src="http://via.placeholder.com/1250x650")
-      .text#scriptMe
-        |Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec 
-      .link
-      .video
-  button(onclick="javascript:$('#scriptMe').trumbowyg();") Edytuj Tekst
-  button(onclick="javascript:$('#scriptMe').trumbowyg('destroy');") Zakończ Edycje
 script
   |//alert("loaded this up")
-<script src="trumbowyg.min.js"></script>
+<script src="/trumbowyg.min.js"></script>
+<script src="/createPostTools.js"></script>
+<script src="/tagSystem.js"></script>
+//<script src="/tagit/js/tag-it.js" type="text/javascript" charset="utf-8"></script>
 script
   |$.trumbowyg.svgPath = '/icons.svg';
   |$('.text').trumbowyg();
+  |//$(".tags").tagit();

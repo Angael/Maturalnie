@@ -3,11 +3,12 @@ html
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet")
-    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(charset="UTF-8")
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-    link(rel="stylesheet" href="trumbowyg.min.css")
-    link(rel='stylesheet', type='text/css', href='styleMain.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js')
+    link(rel="stylesheet" href="/trumbowyg.min.css")
+    link(rel='stylesheet', type='text/css', href='/styleMain.css')
   body
     //- Stuff is black, with panels of apps to run
     //- Possible a side or top navigation bar, but avoid for now
@@ -39,8 +40,7 @@ html
         li
           a(href="javascript:logout()") Logout
         
-
-    #loadPage Content of this will be subject to change
+    #loadPage Loading % page ...
     .toastBox
     script(src="/layout.js")
     script
