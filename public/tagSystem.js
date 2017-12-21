@@ -1,7 +1,7 @@
 let tagArray = ["Polski"];
 function addTag(){
     let name = $("#tagNameAdd").val().capitalize();
-    if(tagArray.indexOf(name) === -1){
+    if(tagArray.indexOf(name) === -1 && name.length > 1){
         tagArray.push(name);
     }
     renderTags();
