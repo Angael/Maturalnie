@@ -23,7 +23,8 @@
       h3 Główne opcje:
       p Obrazek pod nagłówkiem?
         input(type="checkbox" name="hasThumbnail" checked)
-      
+      p Skończyłeś? 
+        button(onclick="sendPost()") Wyślij ten post!
       
       h5 Add Tag:
       input(type="text" placeholder="Polski" id="tagNameAdd")
@@ -37,26 +38,25 @@
     
     .menuInside
       h3 Tekst:
-      button(onclick="javascript:$('#scriptMe').trumbowyg();") Edytuj Tekst
+      button(onclick="javascript:$('#scriptMe').trumbowyg({autogrow: true});") Edytuj Tekst
       button(onclick="javascript:$('#scriptMe').trumbowyg('destroy');") Zakończ Edycje
     .menuInside
       h3 Obrazek:
-      |Image
-      p 3 options
-      p upload your image file
-      p give link to your image
-      p 
-      input(type="text" placeholder="Alternative Link" id="imgLink")
-      h1 File Upload Progress Demo #1
-      
-      form(action='/img/upload', method='post', enctype='multipart/form-data' id="imgForm")
-        input(type='file', name='myfile')
-        br
-        input(type='submit', value='Upload File to Server')
-      .progress
-        .bar
-        .percent 0%
-      #status
+      p Główny obrazek posta
+      input(type="text" placeholder="Link Obrazka dla posta" id="imgLink")
+      p Narazie można tylko pokazywać obrazki hostowane na innej stronie
+      p Funkcja hostowania na tej stronie jest jeszcze wprowadzana
+      .notWorking
+        h1 File Upload Progress Demo #1
+        
+        form(action='/img/upload', method='post', enctype='multipart/form-data' id="imgForm")
+          input(type='file', name='myfile' disabled)
+          br
+          input(type='submit', value='Upload File to Server' disabled)
+        .progress
+          .bar
+          .percent 0%
+        #status
 
 script
   |//alert("loaded this up")
@@ -68,5 +68,5 @@ script
 //<script src="/tagit/js/tag-it.js" type="text/javascript" charset="utf-8"></script>
 script
   |$.trumbowyg.svgPath = '/icons.svg';
-  |$('.text').trumbowyg();
+  |$('.text').trumbowyg({autogrow: true});
   |//$(".tags").tagit();

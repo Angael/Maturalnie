@@ -21,6 +21,9 @@ $('#imgForm').ajaxForm({
         var percentVal = '100%';
         bar.width(percentVal)
         percent.html(percentVal);
+        let link = "/media/:user/:img"
+        $(".menuInside").append("Link to #filename is www.address/" + link);
+        //return url to use for image or media on server
     },
 	complete: function(xhr) {
 		status.html(xhr.responseText);

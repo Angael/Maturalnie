@@ -36,3 +36,4 @@ function loadPost(){
         $("#loadPage").append(htmlPost);
     }});
 }
+

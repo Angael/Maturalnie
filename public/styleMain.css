@@ -239,6 +239,10 @@ input, button, submit {
     display:inline-block;
 }*/
 
+.notWorking, .notWorking *{
+    cursor:not-allowed !important;
+    opacity:0.6;
+}
 /*ScrollBar*/
 ::-webkit-scrollbar {
   background: #cbcbcb;
