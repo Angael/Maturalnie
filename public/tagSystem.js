@@ -1,4 +1,6 @@
-let tagArray = ["Polski"];
+var tagArray; //tagSystem.js will be possibly loaded multiple times so prevent reinitialization 
+tagArray = tagArray || ["Polski"];
+
 function addTag(){
     let name = $("#tagNameAdd").val().capitalize();
     if(tagArray.indexOf(name) === -1 && name.length > 1){

@@ -1,4 +1,4 @@
-
+//multpile times on one form could be bad? thankfully it replaces itself
 (function() {
     
 var bar = $('.bar');

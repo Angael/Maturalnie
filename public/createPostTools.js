@@ -61,7 +61,15 @@ function sendPost(){
     myobj.tags = tagArray;
     myobj.content.hasImg = $("*[name='hasThumbnail']").get(0).checked
     myobj.content.imgLink = $("#imgLink").val()
-    myobj.content.textHtml = $('#scriptMe').trumbowyg('html');
+    //get html, depending on whether it is in trumbowyg or not
+    let TrumbowygOn = $('#scriptMe').trumbowyg('html');
+    if(TrumbowygOn){
+        myobj.content.textHtml = TrumbowygOn
+    }else{
+        myobj.content.textHtml = $(".text").html();
+    }
+    
+
 
     $.ajax({
     method: "POST",
@@ -74,7 +82,7 @@ function sendPost(){
     error: (e)=>{
         console.log( "error1", e);
         $(".mainContainer").append(e.responseText);
-        toast("Error with loading this page", "error")
+        toast("Error with sending post", "error")
     },
     success: (msg)=>{
         console.log( "Done1");
@@ -86,3 +94,9 @@ function sendPost(){
 function formatTags(){
     console.log($(".tags").text());
 }
+$(()=>{
+    let linkForm = $("#imgLink");
+    linkForm.on("blur", ()=>{
+        $('.img > *').attr("src", linkForm.val())
+    })
+});
