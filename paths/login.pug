@@ -1,23 +1,24 @@
 .midWrapper
-  .loginWrap
-    h2 Login
-    form()
-      |username 
-      input(name="name")
-      br
-      |password 
-      input(type="password" name="pass")
-      br
-      input(type="button" value="sendd" onclick="login(this.form.name.value, this.form.pass.value)")
-  .registerWrap
-    h2 Register
-    form(method="POST" action="register")
-      |username 
-      input(name="name")
-      br
-      |password 
-      input(type="password" name="pass")
-      br
-      input(type="submit")
+  .flex-container
+    .loginWrap
+      h2 Login
+      form()
+        |username 
+        input(name="name")
+        br
+        |password 
+        input(type="password" name="pass")
+        br
+        input(type="button" value="sendd" onclick="login(this.form.name.value, this.form.pass.value)")
+    .registerWrap
+      h2 Register
+      form(method="POST" action="/register")
+        |username 
+        input(name="name")
+        br
+        |password 
+        input(type="password" name="pass")
+        br
+        input(type="submit")
 script
   |//alert("loaded this up")
