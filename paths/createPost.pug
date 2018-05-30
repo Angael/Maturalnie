@@ -23,40 +23,39 @@
       h3 Główne opcje:
       p Obrazek pod nagłówkiem?
         input(type="checkbox" name="hasThumbnail" checked)
-      p Skończyłeś? 
-        button(onclick="sendPost()") Wyślij ten post!
       
-      h5 Add Tag:
+      
+      h5 Dodaj Tag:
       input(type="text" placeholder="Polski" id="tagNameAdd")
-      button(onclick="addTag()") Add
-      br
-      h5 Remove Tag:
-      input(type="text" placeholder="Matematyka" id="tagNameRemove")
-      button(onclick="removeTag()") Remove
-      br
-      |Alternatywnie kliknij niechciany tag by go usunąć
-    
-    .menuInside
-      h3 Tekst:
+      button(onclick="addTag()") Dodaj
+      //-  br
+        h5 Remove Tag:
+        input(type="text" placeholder="Matematyka" id="tagNameRemove")
+        button(onclick="removeTag()") Remove
+        br
+        |Alternatywnie kliknij niechciany tag by go usunąć
+      h5 Edycja zawartości
       button(onclick="javascript:$('#scriptMe').trumbowyg({autogrow: true});") Edytuj Tekst
       button(onclick="javascript:$('#scriptMe').trumbowyg('destroy');") Zakończ Edycje
-    .menuInside
-      h3 Obrazek:
-      p Główny obrazek posta
+      
+      
+      h5 Główny obrazek posta:
       input(type="text" placeholder="Link Obrazka dla posta" id="imgLink")
       p Narazie można tylko pokazywać obrazki hostowane na innej stronie
       p Funkcja hostowania na tej stronie jest jeszcze wprowadzana
-      .notWorking
-        h1 File Upload Progress Demo #1
-        
-        form(action='/img/upload', method='post', enctype='multipart/form-data' id="imgForm")
-          input(type='file', name='myfile' disabled)
-          br
-          input(type='submit', value='Upload File to Server' disabled)
-        .progress
-          .bar
-          .percent 0%
-        #status
+      //-
+        .notWorking
+          h1 File Upload Progress Demo #1
+          
+          form(action='/img/upload', method='post', enctype='multipart/form-data' id="imgForm")
+            input(type='file', name='myfile' disabled)
+            br
+            input(type='submit', value='Upload File to Server' disabled)
+          .progress
+            .bar
+            .percent 0%
+          #status 
+      button(onclick="sendPost()") Wyślij Post!
 
 script
   |//alert("loaded this up")

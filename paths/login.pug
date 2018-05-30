@@ -3,22 +3,23 @@
     .loginWrap
       h2 Login
       form()
-        |username 
+        |Username: 
         input(name="name")
         br
-        |password 
+        |Password: 
         input(type="password" name="pass")
         br
-        input(type="button" value="sendd" onclick="login(this.form.name.value, this.form.pass.value)")
+        input(type="button" value="Zaloguj" onclick="login(this.form.name.value, this.form.pass.value)")
     .registerWrap
       h2 Register
       form(method="POST" action="/register")
-        |username 
+        |Username: 
         input(name="name")
         br
-        |password 
+        |Password: 
         input(type="password" name="pass")
         br
-        input(type="submit")
+        input(type="submit" value="Zarejestruj")
+  p By móc używać dodawać posty na tym portalu musisz być zalogowany.
 script
   |//alert("loaded this up")
