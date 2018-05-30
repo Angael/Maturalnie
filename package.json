@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm main.js"
+    "start": "node main.js"
   },
   "author": "Krzysztof Widacki",
   "license": "ISC",
